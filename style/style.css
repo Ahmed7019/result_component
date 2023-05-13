@@ -5,9 +5,14 @@
 :root {
   /* Primary */
   --lightred: hsl(0, 100%, 67%);
+  --lightredbg: hsla(0, 100%, 56%, 0.055);
   --orangeyellow: hsl(39, 100%, 56%);
+  --orangeyellowbg: hsla(39, 100%, 56%, 0.055);
+
   --greenteal: hsl(166, 100%, 37%);
+  --greentealbg: hsla(166, 100%, 56%, 0.055);
   --cobaltblue: hsl(234, 85%, 45%);
+  --cobaltbluebg: hsla(234, 85%, 56%, 0.055);
 
   /* Gradients */
 
@@ -24,6 +29,7 @@
   --lightlavender: hsl(241, 100%, 89%);
   --darkgrayblue: hsl(224, 30%, 27%);
 }
+
 @font-face {
   font-family: Hanken;
   src: url(../fonts/HankenGrotesk-Medium.ttf);
@@ -41,13 +47,21 @@ body {
   transform: translateY(20%);
   width: 600px;
   height: 350px;
-  padding: 15px;
+  box-shadow: 7px 5px 17px var(--paleblue);
+  border-radius: 10%;
+  background-color: var(--white);
 }
+
+/* Result part  */
 
 .result {
   width: 300px;
   height: 100%;
   padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   color: var(--white);
   text-align: center;
   border-radius: 10%;
@@ -57,8 +71,14 @@ body {
     var(--Lightroyalblue)
   );
 }
+
+.result ::selection {
+  background-color: var(--Violetblue);
+}
 .res {
   color: var(--lightlavender);
+  position: absolute;
+  top: 25px;
 }
 
 .circle {
@@ -86,9 +106,106 @@ body {
 .result p {
   color: var(--lightlavender);
   font-size: 15px;
-  line-height: 20px;
 }
 .circle span {
-  font-size: x-small;
+  font-size: xx-small;
   color: var(--lightlavender);
+}
+
+/* Summary part */
+
+.sum {
+  position: absolute;
+  top: 25px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.summary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  padding: 15px;
+  width: 300px;
+  height: 100%;
+  background-color: var(--white);
+  border-top-right-radius: 10%;
+  border-bottom-right-radius: 10%;
+}
+
+.summary ::selection {
+  background-color: var(--darkgrayblue);
+}
+/* table row styles */
+tr {
+  display: block;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 10px;
+  text-transform: capitalize;
+  position: relative;
+}
+
+td {
+  margin-top: 5px;
+  position: relative;
+}
+
+.reaction {
+  color: var(--lightred);
+  background-color: var(--lightredbg);
+}
+
+.memory {
+  color: var(--orangeyellow);
+  background-color: var(--orangeyellowbg);
+}
+
+.verbal {
+  color: var(--greenteal);
+  background-color: var(--greentealbg);
+}
+
+.visual {
+  color: var(--cobaltblue);
+  background-color: var(--cobaltbluebg);
+}
+
+.num {
+  /* To control the begining number */
+  color: var(--darkgrayblue);
+  position: absolute;
+  right: 10px;
+  top: 2px;
+}
+.number {
+  /* To control the " / 100 " color */
+  color: var(--lightlavender);
+}
+
+img {
+  width: 15px;
+  margin-right: 10px;
+  position: relative;
+  top: 2px;
+}
+
+button {
+  display: block;
+  border: none;
+  margin: 5px auto;
+  background-color: var(--darkgrayblue);
+  color: var(--white);
+  padding: 15px;
+  width: 100%;
+  border-radius: 25px;
+}
+
+button:hover {
+  background-image: linear-gradient(
+    to bottom,
+    var(--Lightslateblue),
+    var(--Lightroyalblue)
+  );
 }
