@@ -101,7 +101,7 @@ body {
   font-weight: 500;
   font-size: 20px;
   display: block;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 .result p {
   color: var(--lightlavender);
@@ -113,25 +113,25 @@ body {
 }
 
 /* Summary part */
-
-.sum {
-  position: absolute;
-  top: 25px;
-  font-weight: bold;
-  text-align: left;
-}
-
 .summary {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: left;
-  padding: 15px;
+  padding: 20px;
   width: 300px;
   height: 100%;
   background-color: var(--white);
   border-top-right-radius: 10%;
   border-bottom-right-radius: 10%;
+}
+
+.sum {
+  position: absolute;
+  left: 35px;
+  top: 25px;
+  font-weight: bold;
 }
 
 .summary ::selection {
@@ -198,7 +198,7 @@ button {
   background-color: var(--darkgrayblue);
   color: var(--white);
   padding: 15px;
-  width: 100%;
+  width: 95%;
   border-radius: 25px;
 }
 
@@ -208,4 +208,41 @@ button:hover {
     var(--Lightslateblue),
     var(--Lightroyalblue)
   );
+}
+
+/* Mobile Screen */
+@media (min-width: 375px) and (max-width: 1023px) {
+  .parent {
+    flex-direction: column;
+    width: 300px;
+    height: 600px;
+    font-size: smaller;
+    margin: -110px auto;
+    /* transform: translateX(-50%); */
+  }
+
+  .result {
+    width: 100%;
+    height: calc(100% / 2);
+  }
+  .res {
+    top: 15px;
+  }
+  .circle {
+    font-size: large;
+    width: 80px;
+    height: 80px;
+  }
+  .great {
+    margin-bottom: 25px;
+  }
+
+  .summary {
+    width: 100%;
+    height: calc(100% / 2);
+  }
+  .sum {
+    top: 15px;
+    margin-bottom: 10px;
+  }
 }
